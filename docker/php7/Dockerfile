@@ -2,7 +2,7 @@ FROM php:7.0-fpm
 
 COPY ./php.ini /usr/local/etc/php/php.ini
 
-RUN docker-php-ext-install pdo pdo_mysql mysqli \
+RUN apt-get update && apt-get install -y gettext && docker-php-ext-install pdo pdo_mysql mysqli gettext \
     && pecl install -o -f xdebug \
     && docker-php-ext-enable xdebug
     #&& rm -rf /tmp/pear \

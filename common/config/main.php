@@ -14,5 +14,13 @@ return [
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
+        'i18n' => [
+            'translations' => [
+                '*' => [
+                    'class' => 'yii\i18n\GettextMessageSource',
+                    'basePath' => '@common/messages',
+                ],
+            ],
+        ],
     ],
 ];

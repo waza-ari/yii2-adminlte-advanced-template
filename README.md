@@ -136,3 +136,24 @@ If running in a docker environment, you may want to run the commands from the PH
 ```
 docker exec -it yii2templateadminlte_php_1 ./yii migrate
 ```
+
+Internationalization (i18n)
+---------------------------
+
+This template makes use of the Yii2 built-in i18n feature. It contains a config which can be used to extract all
+strings from `Yii::t()` calls to the Gettext files, which are located in `common/messages`. The source language is set
+to `en_US`, which matches the Yii2 recommendations, as it is usually easier to find someone to translate from english
+to non-english rather than from non-english to non-english.
+
+You can specifiy the required target languages in the `common/config/i18n.php` configuration file. When extracting
+messages, new strings will be added to a separate *.po file for each language. You can extract the strings using the 
+following command:
+
+`docker exec -it yii2templateadminlte_php_1 ./yii message common/config/i18n.php`
+
+You can also use view translation, as has been done for the `site/index` view. Refer to the
+[Yii2 i18n documentation](http://www.yiiframework.com/doc-2.0/guide-tutorial-i18n.html) for further information.
+
+After changing the PO files, you need to convert them to MO files, for example like this:
+
+`docker exec -it yii2templateadminlte_php_1 msgfmt common/messages/de-DE/messages.po -o common/messages/de-DE/messages.mo`

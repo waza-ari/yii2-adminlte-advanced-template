@@ -12,6 +12,10 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
+    // set target language to be Russian
+    'language' => 'de-DE',
+    // set source language to be English
+    'sourceLanguage' => 'en-US',
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -43,7 +47,7 @@ return [
             'showScriptName' => false,
             'rules' => [
             ],
-        ],
+        ]
     ],
     'params' => $params,
 ];

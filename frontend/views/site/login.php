@@ -6,7 +6,7 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \common\models\LoginForm */
 
-$this->title = 'Sign In';
+$this->title = Yii::t('login', 'Sign In');
 
 $fieldOptions1 = [
     'options' => ['class' => 'form-group has-feedback'],
@@ -25,7 +25,7 @@ $fieldOptions2 = [
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg"><?= Yii::t('login', 'Sign in to start your session')?></p>
 
         <?php $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => false]); ?>
 
@@ -45,7 +45,7 @@ $fieldOptions2 = [
             </div>
             <!-- /.col -->
             <div class="col-xs-4">
-                <?= Html::submitButton('Sign in', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'login-button']) ?>
+                <?= Html::submitButton(Yii::t('login', 'Sign in'), ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'login-button']) ?>
             </div>
             <!-- /.col -->
         </div>
@@ -62,8 +62,8 @@ $fieldOptions2 = [
         </div>
         <!-- /.social-auth-links -->
 
-        <a href="#">I forgot my password</a><br>
-        <a href="register.html" class="text-center">Register a new membership</a>
+        <a href="#"><?= Yii::t('login', 'I forgot my password')?></a><br>
+        <a href="register.html" class="text-center"><?= Yii::t('login', 'Register a new membership')?></a>
 
     </div>
     <!-- /.login-box-body -->
