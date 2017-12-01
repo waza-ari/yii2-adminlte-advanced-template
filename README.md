@@ -134,7 +134,7 @@ Apply Migrations: `./yii migrate`
 If running in a docker environment, you may want to run the commands from the PHP docker container, for example:
 
 ```
-docker exec -it yii2templateadminlte_php_1 ./yii migrate
+docker exec -it yii2adminlteadvancedtemplate_php_1 ./yii migrate
 ```
 
 Internationalization (i18n)
@@ -149,11 +149,11 @@ You can specifiy the required target languages in the `common/config/i18n.php` c
 messages, new strings will be added to a separate *.po file for each language. You can extract the strings using the 
 following command:
 
-`docker exec -it yii2templateadminlte_php_1 ./yii message common/config/i18n.php`
+`docker exec -it yii2adminlteadvancedtemplate_php_1 ./yii message common/config/i18n.php`
 
 You can also use view translation, as has been done for the `site/index` view. Refer to the
 [Yii2 i18n documentation](http://www.yiiframework.com/doc-2.0/guide-tutorial-i18n.html) for further information.
 
 After changing the PO files, you need to convert them to MO files, for example like this:
 
-`docker exec -it yii2templateadminlte_php_1 msgfmt common/messages/de-DE/messages.po -o common/messages/de-DE/messages.mo`
+`docker exec -it yii2adminlteadvancedtemplate_php_1 msgfmt common/messages/de-DE/messages.po -o common/messages/de-DE/messages.mo`
